@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 90vh;
+    width: 500pxpx;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.container header {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.container header h1 {
+    font-size: 38px;
+}
+
+.container header input {
+    padding: 5px;
+    width: 400px;
+}
+
+.container header input::placeholder {
+    font-size: 16px;
+}
+
+.container .hero {
+    padding-top: 20px;
+}
+
+.container .hero .books .book{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container .hero .books .book .first{
+    display: flex;
+    gap: 20px;
+}
+
+.container .hero .books .book .second .del-btn {
+    color: #fff;
+    background-color: #6b43ff;
+    border: 1px solid #141414;
+    border-radius: 4px;
+    padding: 5px;
+    width: 75px;
+    cursor: pointer;
+}
+
+.container .hero .books .book .second .del-btn:hover{
+    background-color: #141414;
+    transition: all 0.3s ease;
+}
+
+.container .hero .books .book .line {
+    width: 5px;
+    height: 50px;
+    background-color: #d3d3d3;
+}
+
+.container .add-button {
+    /*margin-top: 30px;*/ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;   
+}
+
+.container .add-button input {
+    width: 250px;
+    padding: 10px;
+    margin-left: 75px;
+}
+
+.container .add-button input::placeholder {
+    font-size: 16px;
+}
+
+.container .add-button .add-btn {
+    width: 70px;
+    color: #fff;
+    background-color: #6b43ff;
+    border: 1px solid #141414;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 75px;
+}
+
+.container .add-button .add-btn:hover{
+    background-color: #141414;
+    transition: all 0.3s ease;
+}
+
+.container #hide {
+    width: 30px;
+}
+
+.container #drugi label {
+    line-height: 52px;
+}
+
+#tabbed-content li{
+    display: inline-block;
+    padding: 10px 14px;
+    background: #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#tabbed-content .panel{
+    display: none;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 4px;
+}
+
+#tabbed-content .panel.active {
+    display: block;
+}
