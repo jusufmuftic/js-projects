@@ -56,6 +56,10 @@ forma.addEventListener('submit', (e)=> {
         p.classList.add('naziv');
         button.classList.add('del-btn');
 
+        button.addEventListener('click', function() {
+            let knjiga = button.parentElement.parentElement;
+            knjiga.parentNode.removeChild(knjiga);
+        })
 })
 
 //Skrivanje knjiga
