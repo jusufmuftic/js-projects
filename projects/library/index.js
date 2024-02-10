@@ -13,13 +13,6 @@ dugme.forEach(function(btn){
     })
 })
 
-let link = document.querySelector('#link');
-
-link.addEventListener('click', function(e) {
-    e.preventDefault();
-    console.log(e.target.textContent);
-})
-
 //Dodavanje knjiga
 
 let forma = document.querySelector('#drugi');
