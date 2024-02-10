@@ -13,13 +13,6 @@ dugme.forEach(function(btn){
     })
 })
 
-let link = document.querySelector('#link');
-
-link.addEventListener('click', function(e) {
-    e.preventDefault();
-    console.log(e.target.textContent);
-})
-
 //Dodavanje knjiga
 
 let forma = document.querySelector('#drugi');
@@ -56,6 +49,10 @@ forma.addEventListener('submit', (e)=> {
         p.classList.add('naziv');
         button.classList.add('del-btn');
 
+        button.addEventListener('click', function() {
+            let knjiga = button.parentElement.parentElement;
+            knjiga.parentNode.removeChild(knjiga);
+        })
 })
 
 //Skrivanje knjiga
