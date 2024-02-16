@@ -1,15 +1,15 @@
-let knjige = document.querySelector('.books');
+let books = document.querySelector('.books');
 
 let h1 = document.querySelector('#h1');
 h1.innerText += "'s Jusuf";
 
 //Button za brisanje
-let dugme = document.querySelectorAll('.del-btn')
+let del_button = document.querySelectorAll('.del-btn')
 
-dugme.forEach(function(btn){
+del_button.forEach(function(btn){
     btn.addEventListener('click', function() {
-        let knjiga = btn.parentElement.parentElement;
-        knjiga.parentNode.removeChild(knjiga);
+        let book1 = btn.parentElement.parentElement;
+        book1.parentNode.removeChild(book1);
     })
 })
 
@@ -35,7 +35,7 @@ forma.addEventListener('submit', (e)=> {
         first.appendChild(line);
         first.appendChild(p);
         second.appendChild(button);
-        knjige.appendChild(book);
+        books.appendChild(book);
 
         //Dodavanje teksta
         p.textContent = vrijednost;
@@ -70,7 +70,7 @@ const searchBox = document.forms['prvi'].querySelector('input');
 
 searchBox.addEventListener('keyup', (e) => {
     const term = e.target.value.toLowerCase();
-    const books = knjige.getElementsByClassName('book');
+    const books = books.getElementsByClassName('book');
     Array.from(books).forEach((book) => {
         const title = book.firstElementChild.textContent;
         if (title.toLowerCase().indexOf(term) != -1){
