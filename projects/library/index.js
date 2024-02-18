@@ -1,27 +1,27 @@
-let knjige = document.querySelector('.books');
+let books = document.querySelector('.books');
 
 let h1 = document.querySelector('#h1');
 h1.innerText += "'s Jusuf";
 
 //Button za brisanje
-let dugme = document.querySelectorAll('.del-btn')
+let del_button = document.querySelectorAll('.del-btn')
 
-dugme.forEach(function(btn){
+del_button.forEach(function(btn){
     btn.addEventListener('click', function() {
-        let knjiga = btn.parentElement.parentElement;
-        knjiga.parentNode.removeChild(knjiga);
+        let book1 = btn.parentElement.parentElement;
+        book1.parentNode.removeChild(book1);
     })
 })
 
 //Dodavanje knjiga
 
-let forma = document.querySelector('#drugi');
+let form = document.querySelector('#drugi');
 
-forma.addEventListener('submit', (e)=> {
+form.addEventListener('submit', (e)=> {
     e.preventDefault();
-    const vrijednost = forma.querySelector('input[type="text"]').value;
+    const value = form.querySelector('input[type="text"]').value;
 
-        //Dodavanje elemenata
+        //Adding elements
         const book = document.createElement('div');
         const first = document.createElement('div');
         const second = document.createElement('div');
@@ -29,19 +29,19 @@ forma.addEventListener('submit', (e)=> {
         const p = document.createElement('p');
         const button = document.createElement('button');
 
-        //Appendati elemente
+        //Appending elements
         book.appendChild(first);
         book.appendChild(second);
         first.appendChild(line);
         first.appendChild(p);
         second.appendChild(button);
-        knjige.appendChild(book);
+        books.appendChild(book);
 
-        //Dodavanje teksta
-        p.textContent = vrijednost;
+        //Adding text
+        p.textContent = value;
         button.textContent = 'Delete';
 
-        //Dodavanje klasa
+        //Adding classes
         book.classList.add('book');
         first.classList.add('first');
         second.classList.add('second');
@@ -55,23 +55,23 @@ forma.addEventListener('submit', (e)=> {
         })
 })
 
-//Skrivanje knjiga
-let kockica = document.querySelector('#hide');
-kockica.addEventListener('change', function(e){
-    if(kockica.checked){
-        knjige.style.display = 'none';
+//Hiding books
+let checkBox = document.querySelector('#hide');
+checkBox.addEventListener('change', function(e){
+    if(checkBox.checked){
+        books.style.display = 'none';
     } else {
-        knjige.style.display = 'initial';
+        books.style.display = 'initial';
     }
 })
 
-//Trazenje knjiga
+//Finding books
 const searchBox = document.forms['prvi'].querySelector('input');
 
 searchBox.addEventListener('keyup', (e) => {
     const term = e.target.value.toLowerCase();
-    const books = knjige.getElementsByClassName('book');
-    Array.from(books).forEach((book) => {
+    const finding_books = books.getElementsByClassName('book');
+    Array.from(finding_books).forEach((book) => {
         const title = book.firstElementChild.textContent;
         if (title.toLowerCase().indexOf(term) != -1){
             book.style.display = 'block';
@@ -80,4 +80,3 @@ searchBox.addEventListener('keyup', (e) => {
         }
     })
 })
-
