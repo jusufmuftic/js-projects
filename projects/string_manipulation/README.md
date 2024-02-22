@@ -1,0 +1,1 @@
+In this project, I mostly focused on string manipulation in JavaScript, creating a Email Validator. This is not the best option for Email Validation, but I created just for my improvement in string manipulation, for better understanding and skills in future and more complexed projects!
