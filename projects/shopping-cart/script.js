@@ -6,6 +6,7 @@ function addToCart(btn) {
     let name = mainEl.querySelector('h3').innerText
     let quantity = mainEl.querySelector('input').value
     let cartItems = document.querySelector('.cart-items')
+    let vegies = document.querySelectorAll('.single-item')
 
     if (parseInt(quantity) > 0) {
         price = price.substring(1)
@@ -23,8 +24,12 @@ function addToCart(btn) {
 
         document.querySelector('.total').innerText = `Total: $${allTotal}`
 
-        btn.innerText = 'Added'
-        btn.setAttribute('disabled', 'true')
+        vegies.forEach((vegie) => {
+            let itemName = vegie.querySelector('.si-content h3').innerText
+            if(itemName === name) {
+                vegie.querySelector('.actions input').value = 0
+            } 
+        })
     } else {
         alert('Choose a quantity')
     }
