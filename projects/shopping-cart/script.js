@@ -49,11 +49,4 @@ function removeItem(e) {
     document.querySelector('.total').innerHTML = `<b>Total:</b> $${allTotal}`
 
     mainEl.remove()
-
-    vegies.forEach((vegie) => {
-        let itemName = vegie.querySelector('.si-content h3').innerText
-        if(itemName === name) {
-            vegie.querySelector('.actions input').value = 0
-        } 
-    })
 }
